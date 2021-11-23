@@ -25,10 +25,73 @@ router.get('/create', (req, res, next) => {
     "email": "muntasir@gmail.com"
     });
 
+    var raw2 = JSON.stringify({
+            "profile": {
+                "header": {
+                "isoLanguage": "EN",
+                "isoCountry": "GB",
+                "brandCode": "BH0162",
+                "campaignId": "CN000631",
+                "origin": "Website",
+                "formType": "Sign Up",
+                "entity": "PRM 2.6"
+                },
+            "consumerIdentity": {
+                "unileverId": "12345678",
+                "hashedUnileverId": "A1B2C3D4E5",
+                "firstName": "My name",
+                "lastName": "Joe",
+                "middleName": "Anothony",
+                "preferredName": "Joe",
+                "honorificPrefix": "Mr",
+                "honorificSuffix": "OBE",
+                "gender": "M",
+                "dateOfBirth": "2000-05-24"
+                },
+            "contactDetail": {
+                "email": "joeistesting@gmail.com",
+                "mobileNumber": "07710006635",
+                "address": {
+                    "houseNameOrNumber": "1",
+                    "addressLine1": "1 Street Name",
+                    "addressLine2": "Village",
+                    "cityName": "Dhaka",
+                    "postalCode": "AB12C34",
+                    "stateOrProvince": "AB",
+                    "addressCountry": "GB"
+                    }
+            },
+        
+            "optInStatus": {
+                "brandEmailConsent": true,
+                "brandSMSConsent": true,
+                "unileverEmailConsent": true,
+                "unileverSMSConsent": true,
+                "legalAgeConsent": true
+                },
+            "additionalSubscription": [
+                    {
+                    "serviceId": "",
+                    "optIn": true
+                    }
+                ],
+            "questionAndAnswers": [
+                    {
+                    "questionId": 10,
+                        "answerId": [
+                        5678,
+                        9121
+                        ],
+                    "answerText": "Example answer"
+                    }
+                ]
+            }
+    })
+
     var requestOptions = {
     method: 'POST',
     headers: myHeaders,
-    body: raw,
+    body: raw2,
     redirect: 'follow'
     };
 
