@@ -14,15 +14,15 @@ router.get('/testing', (req, res, next) => {
 router.get('/create', (req, res, next) => {
     
     var myHeaders = new fetch.Headers();
-    myHeaders.append("client_id", "9d25971a3c204bf18d7c352115dc9c7c");
-    myHeaders.append("client_secret", "FbB1134Ce0FC415492e281E19561C030");
+    myHeaders.append("client_id", process.env.CLIENTID);
+    myHeaders.append("client_secret", process.env.CLIENTSECRET);
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
     "firstName": "My name",
     "lastName": "my last",
-    "mobile": "01676349496",
-    "email": "muntasir@gmail.com"
+    "mobile": "01000100001",
+    "email": "testing@mail.com"
     });
 
     var raw2 = JSON.stringify({
